@@ -14,6 +14,8 @@ defmodule Fields.Url do
 
   def type, do: :string
 
+  def cast(nil), do: {:ok, nil}
+
   def cast(value) do
     value = value |> to_string() |> String.trim()
 

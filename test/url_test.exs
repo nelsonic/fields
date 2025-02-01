@@ -9,6 +9,10 @@ defmodule Fields.UrlTest do
   end
 
   describe "cast" do
+    test "Url.cast accepts a nil" do
+      assert {:ok, nil} == Url.cast(nil)
+    end
+
     test "Url.cast accepts a string" do
       assert {:ok, "http://www.test.com"} == Url.cast("http://www.test.com")
     end
